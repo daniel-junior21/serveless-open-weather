@@ -1,0 +1,1 @@
+exports.openWeatherController = require('./openWeatherController')
