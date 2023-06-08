@@ -1,5 +1,7 @@
 const controller = require('./src/controller')
 
+global.logger = require('./config/logger')
+
 module.exports.handler = async (event, context) => {
     const responseData = await controller.openWeatherController.getCurrentWeather(event)
 
