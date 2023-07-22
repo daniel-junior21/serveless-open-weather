@@ -1,1 +1,1 @@
-exports.openWeatherController = require('./openWeatherController')
+exports.openWeatherController = require('./openWeatherController');
