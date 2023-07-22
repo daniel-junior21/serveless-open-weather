@@ -1,22 +1,23 @@
-const axios = require('axios')
+const axios = require('axios');
+const CONSTANT = require('../property');
 
-exports.getCurrentWeather = (event) => {
+exports.getCurrentWeather = (bodyData) => {
     const config = {
         method: "get",
-        url: `https://api.openweathermap.org/data/2.5/weather?lat={lat}}&lon={lon}&units={unit}&appid={api key}`,
+        url: `https://api.openweathermap.org/data/2.5/weather?lat=${bodyData.latitude}&lon=${bodyData.longitude}&units=${bodyData.unitMeasurement}&appid=${CONSTANT.OPEN_WEATHER_API_KEY}`,
     }
 
     return axios(config).then((response) => {
-        console.log(response)
+        logger.info('[openWeatherApi - Response]: ' + JSON.stringify(response.data));
         return {
             statusCode: response.status,
             body: response.data
         }
     }).catch((error) => {
-        console.log(error)
+        logger.error('[openWeatherApi - Exception]: ' + JSON.stringify(error.response.data));
         return {
-            statusCode: error.status,
-            body: error.data
+            statusCode: error.response.status,
+            body: error.response.data
         }
     })
 }

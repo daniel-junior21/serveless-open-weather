@@ -5,7 +5,7 @@ const logger = pino({
     formatters: {
         bindings() {
             return {
-                application: `${CONSTANT.TEAM}-${CONSTANT.NAME_APP}`,
+                application: `${CONSTANT.NAME_APP}`,
                 environment: `${CONSTANT.ENV}`,
                 version: `${CONSTANT.VERSION}`
             }

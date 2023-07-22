@@ -1,1 +1,1 @@
-exports.openWeatherApi = require('./openWeatherApi')
+exports.openWeatherApi = require('./openWeatherApi');
