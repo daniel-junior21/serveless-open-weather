@@ -4,8 +4,11 @@
   "description": "Serveless Lambda project for training purposes using NodeJS and OpenWeatherMap API",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "set NODE_ENV=dev && nodemon ./localRunner.js"
+    "test": "set NODE_ENV=dev && jest",
+    "coverage": "npm test --coverage",
+    "dev": "set NODE_ENV=dev && nodemon ./localRunner.js",
+    "hml": "set NODE_ENV=hml && nodemon ./localRunner.js",
+    "prd": "set NODE_ENV=prd && nodemon ./localRunner.js"
   },
   "repository": {
     "type": "git",
