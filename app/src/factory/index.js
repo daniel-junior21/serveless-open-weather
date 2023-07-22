@@ -1,0 +1,1 @@
+exports.responseFactory = require('./responseFactory');
